@@ -1,0 +1,38 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+:root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+  background-image: url("https://external-preview.redd.it/z7_wYb9-YSvt0pDJlDIu8iuK_aWdqZPg0wvrGdwNvBw.png?auto=webp&s=b40bf3d0bccf7fe4f8dc601182710ca34eac2222");
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "PokemonHollow";
+    src: url("/fonts/PokemonHollow.ttf");
+  }
+
+  @font-face {
+    font-family: "PokemonSolid";
+    src: url("/fonts/PokemonSolid.ttf");
+  }
+}
+
+.blueStroke {
+  text-shadow: -3px 0 #355fac, 0 3px #355fac, 3px 0 #355fac, 0 -3px #355fac;
+}
+
+.catchEmLogo {
+  width: 500px;
+  height: auto;
+}
