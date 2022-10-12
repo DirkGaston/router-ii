@@ -10,6 +10,20 @@
   box-sizing: border-box;
   min-height: 100vh;
   background-image: url("https://external-preview.redd.it/z7_wYb9-YSvt0pDJlDIu8iuK_aWdqZPg0wvrGdwNvBw.png?auto=webp&s=b40bf3d0bccf7fe4f8dc601182710ca34eac2222");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  --mx: 50%;
+  --my: 50%;
+  --s: 1;
+  --o: 0;
+  --tx: 0px;
+  --ty: 0px;
+  --rx: 0deg;
+  --ry: 0deg;
+  --pos: 50% 50%;
+  --posx: 50%;
+  --posy: 50%;
+  --hyp: 0;
 }
 
 @tailwind base;
@@ -26,13 +40,4 @@
     font-family: "PokemonSolid";
     src: url("/fonts/PokemonSolid.ttf");
   }
-}
-
-.blueStroke {
-  text-shadow: -3px 0 #355fac, 0 3px #355fac, 3px 0 #355fac, 0 -3px #355fac;
-}
-
-.catchEmLogo {
-  width: 500px;
-  height: auto;
 }

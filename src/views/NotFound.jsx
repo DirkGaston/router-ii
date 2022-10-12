@@ -1,5 +1,4 @@
-import React from "react";
-import Lost from "../assets/lostPokemon.gif";
+import Lost from "../assets/img/lostPokemon.gif";
 
 function NotFound() {
   return (

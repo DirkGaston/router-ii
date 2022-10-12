@@ -1,10 +1,10 @@
-import Navbar from "../components/Navbar"
+import Navbar from "../components/Navbar";
 function HeaderLayout() {
   return (
     <div>
-      <Navbar/>
+      <Navbar />
     </div>
-  )
+  );
 }
 
-export default HeaderLayout
+export default HeaderLayout;

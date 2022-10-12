@@ -1,7 +1,7 @@
-import React from "react";
 import FooterLayout from "./FooterLayout";
 import HeaderLayout from "./HeaderLayout";
 import MainLayout from "./MainLayout";
+import "../assets/css/Layout.css";
 
 function PageLayout() {
   return (

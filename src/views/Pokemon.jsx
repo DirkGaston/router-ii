@@ -1,7 +1,17 @@
-import React from "react";
+import { useContext } from "react";
 
-function Pokemon() {
-  return <div>Pokémon</div>;
+import Gallery from "../components/Gallery";
+
+import Context from "../context/Context";
+
+function Pokemons() {
+  const { pokemons } = useContext(Context);
+
+  return (
+    <div id="Home">
+      <Gallery />
+    </div>
+  );
 }
 
-export default Pokemon;
+export default Pokemons;

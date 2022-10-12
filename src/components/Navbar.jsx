@@ -1,9 +1,13 @@
-import React from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import Logo from "../assets/pokemon-logo.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from '@fortawesome/free-solid-svg-icons'
+
+
+import Logo from "../assets//img/pokemon-logo.png";
 
 export default function Navbar() {
-  const [navbarOpen, setNavbarOpen] = React.useState(false);
+  const [navbarOpen, setNavbarOpen] = useState(false);
   return (
     <nav className="flex min-w-full top-0 flex-wrap items-center justify-between px-2 py-3 bg-red-600 z-10">
       <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
@@ -11,11 +15,11 @@ export default function Navbar() {
           {<img src={Logo} className="mr-3 h-6 sm:h-9" alt="Pokemon Logo" />}
 
           <button
-            className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+            className="text-yellow-400 cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-yellow-400 rounded bg-transparent block lg:hidden outline-none focus:outline-none"
             type="button"
             onClick={() => setNavbarOpen(!navbarOpen)}
           >
-            <i className="fas fa-bars"></i>
+            <FontAwesomeIcon icon={faBars} />
           </button>
         </div>
         <div
@@ -49,10 +53,10 @@ export default function Navbar() {
                 }
                 end
               >
-                Pokémon
+                Galería
               </NavLink>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <NavLink
                 to={"/Collection"}
                 className={({ isActive }) =>
@@ -64,7 +68,7 @@ export default function Navbar() {
               >
                 Colección
               </NavLink>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>

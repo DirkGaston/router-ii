@@ -1,14 +1,50 @@
-import React, { useContext } from "react";
+import "./index.css";
+
+import { BrowserRouter } from "react-router-dom";
+
 import PageLayout from "./layout/PageLayout";
-import AppContext from "./context/AppContext";
+
+import { useState, useEffect } from "react";
+import Context from "./context/Context";
 
 function App() {
-  const { test } = useContext(AppContext);
+  const [pokemons, setPokemons] = useState([]);
+  const [loadPokemon] = useState("https://pokeapi.co/api/v2/pokemon");
+
+  const [collection, setCollection] = useState([]);
+
+  const globalState = { pokemons, setPokemons, collection, setCollection };
+
+  useEffect(() => {
+    const getPokemon = async () => {
+      try {
+        const res = await fetch(loadPokemon);
+        const data = await res.json();
+
+        function createPokemonObject(results) {
+          results.forEach(async (pokemon) => {
+            const res = await fetch(
+              `https://pokeapi.co/api/v2/pokemon/${pokemon.name}`
+            );
+            const data = await res.json();
+            setPokemons((list) => [...list, data]);
+          });
+        }
+        createPokemonObject(data.results);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getPokemon();
+  }, []);
 
   return (
     <div className="App">
-      <h1>{test}</h1>
-      <PageLayout />
+      <Context.Provider value={globalState}>
+        <BrowserRouter>
+          <PageLayout />
+        </BrowserRouter>
+      </Context.Provider>
     </div>
   );
 }
